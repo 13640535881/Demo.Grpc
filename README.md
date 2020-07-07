@@ -1,5 +1,6 @@
 # Demo.Grpc
 
+核心库：Grpc.AspNetCore
 
 grpc使用http/2
 

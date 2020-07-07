@@ -15,11 +15,11 @@ namespace Grpc.ClientTest.Controlers
     {
         public IActionResult Index()
         {
-            dass();
+            UseGrpc();
             return Ok(ViewBag.name);
         }
 
-        private void dass()
+        private void UseGrpc()
         {
             ////创建交换机
             //using var channel = GrpcChannel.ForAddress("https://localhost:5020");
@@ -36,6 +36,7 @@ namespace Grpc.ClientTest.Controlers
             var client = new Greeter.GreeterClient(channel);
             //客户端调用服务端的方法并返回结果
             var response = client.SayHello(new HelloRequest { Name = "gRPCWeb 测试" });
+            //赋值
             ViewBag.name = response.Message;
         }
     }
